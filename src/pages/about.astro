@@ -1,4 +1,23 @@
 ---
+const pageTitle = 'About Me';
+
+const identity = {
+	firstName: "Evan",
+	country: "the US",
+	occupation: "Software Engineer",
+	hobbies: ["guitar","custom keyboards","hiking"]
+};
+
+const skills = ["C#/.NET", "Python", "MSSQL", "HTML/CSS", "Astro", "Learning Rust!"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+// skill styles
+const skillColor = "navy";
+const fontWeight = "bold";
+const txtTranfrm = "uppercase";
 ---
 
 <html lang="en">
@@ -7,7 +26,18 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
+		<style>
+			h1 {
+				color: purple;
+				font-size: 4rem;
+			}
+			.skill {
+				color: navy;
+				font-weight: 100;
+				text-transform: uppercase;
+			}
+		</style>
 	</head>
 	<body>
 		<nav>
@@ -15,11 +45,23 @@
 			<a href="/about/">About</a>
 			<a href="/blog/">Blog</a>
 		</nav>
-		<h1>About Me</h1>
+		<h1>{pageTitle}</h1>
 		<h2>... and my new Astro site!</h2>
 
-		<p>I am working through Astro's introductory tutorial. This is the second page on my website!</p>
-
-		<p>This site will update as I complete more of the tutorial.</p>
+		<p>Here are a few facts about me:</p>
+		<ul>
+			<li>My name is {identity.firstName}.</li>
+			<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+			{identity.hobbies.length >= 3 && 
+				<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[2]}.</li>
+			}
+		</ul>
+		<p>My skills are:</p>
+		<ul>
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
+		</ul>
+		{happy && <p>I am happy to be learning Astro!</p>}
+		{finished && <p>I finished this tutorial!</p>}
+		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 	</body>
 </html>
