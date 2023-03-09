@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css'
+
 const pageTitle = 'About Me';
 
 const identity = {
@@ -10,14 +12,14 @@ const identity = {
 
 const skills = ["C#/.NET", "Python", "MSSQL", "HTML/CSS", "Astro", "Learning Rust!"];
 
-const happy = true;
-const finished = false;
-const goal = 3;
+const happy: boolean = true;
+const finished: boolean = false;
+const goal: number = 3;
 
 // skill styles
-const skillColor = "navy";
-const fontWeight = "bold";
-const txtTranfrm = "uppercase";
+const skillColor: string = "green";
+const fontWeight: string = "bold";
+const txtTransform: string = "uppercase";
 ---
 
 <html lang="en">
@@ -27,15 +29,15 @@ const txtTranfrm = "uppercase";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-		<style>
+		<style define:vars={{skillColor, fontWeight, txtTransform}}>
 			h1 {
 				color: purple;
 				font-size: 4rem;
 			}
 			.skill {
-				color: navy;
-				font-weight: 100;
-				text-transform: uppercase;
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--txtTransform);
 			}
 		</style>
 	</head>
