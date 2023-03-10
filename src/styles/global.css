@@ -54,8 +54,7 @@ h1 {
   text-transform: uppercase;
 }
 
-.nav-links a:hover,
-a:focus {
+.nav-links a:hover, a:focus {
   background-color: #ff9776;
 }
 
@@ -80,13 +79,4 @@ a:focus {
   .hamburger {
     display: none;
   }
-}
-
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
-}
-
-.dark .nav-links a {
-  color: #fff;
 }
