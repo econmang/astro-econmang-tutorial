@@ -1,0 +1,40 @@
+.test-lines {
+  width: 20px;
+  height: 15px;
+}
+
+.test-lines {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.test-lines .test-line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #ff9776;
+}
+
+.expanded {
+  display: unset;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+
+  .test-lines {
+    display: none;
+  }
+}
